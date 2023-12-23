@@ -6,9 +6,12 @@ from gameparts import Board
 from gameparts.exceptions import FieldIndexError, CellOccupiedError
 
 def save_result(result: str):
-    file = open('result.txt', 'a')
-    file.write(f' {result}\n')
-    file.close()
+    with open('result.txt', 'a') as f:
+        f.write(f' {result}\n')
+        f.close()
+    # file = open('result.txt', 'a')
+    # file.write(f' {result}\n')
+    # file.close()
 
 def main():
     game = Board()
